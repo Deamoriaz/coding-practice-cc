@@ -1,0 +1,21 @@
+// This is a string containing mock financial data
+// It is formatted as a CSV file
+// The first field is the name of the corporation, 
+//the second field is a transaction ID number, 
+//and the third field is the amount in dollars of the transaction
+ 
+const auditInput = 
+`Acme Corporation,I3223,24319.71
+Acme Corporation,I4593,54812.08
+Globex,I3306,2200.00
+Initech,I4981,7719.00
+Initech,I2435,7185.85
+Globex,I3937,11586.25
+Acme Corporation,I6677,4401.48
+Initech,I6672,31.94
+Initech,I6570,11832.20
+Globex,I6601,9672.00
+Globex,I5104,1556.65
+Acme Corporation,I6578,2841.73
+Initech,I0193,5000.00
+Acme Corporation,I6612,1617.25`;
