@@ -34,35 +34,24 @@ sampleJSON = {
     - note, you can use the method and argument .split(\n) to split a string on the newlines
 */
 
+/* IDEA: Use a counter to reset index after 3 per newline */
+
+let auditInputJSON = [];
+let secCut = [];
+let result = [];
+
 function formatCSVStringToJSON() {
-    var auditInputJSON = JSON.stringify(auditInput);
-    var iterate = JSON.parse(auditInputJSON).split('\n').length; //control for loop
-    var count = 1;
-    for (let i=1; i < iterate; i++) {
-        var organized = auditInput.split('\n');
-        console.log(count + ": " + organized);
-        count++
+    const usingSplit = auditInput.split('\n');
+    for(let i = 0; i < usingSplit.length; i++){
+        secCut[i] = usingSplit[i].split(',');
+
+        auditInputJSON[i] = {
+            "Company Name" : secCut[i][0],
+            "transactionID": secCut[i][1],
+            "Amount" : secCut[i][2]
+        }
     }
-    
-    console.log("Given: \n\n" + auditInputJSON);
-    console.log("\nIterations: " + JSON.parse(auditInputJSON).split('\n').length); //debugging
-    console.log(JSON.parse(auditInputJSON));
-    
-    
-
-    // Object.entries(auditInputJSON).forEach(([key, value]) => {
-    //     console.log(key, value);
-    // });
-    // var count = 1;
-    // for (let i=1; i < iterate; i++) {
-    //     var organized = auditInput.split('\n');
-    //     console.log(count + ": " + organized);
-    //     count++
-    // }
-};
-
-function companyName() {
-    
-};
+    console.log(auditInputJSON);
+}
 
 formatCSVStringToJSON();
